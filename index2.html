@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			Weather App | Front End Module Evaluation | HTML, CSS, BootStrap,
+			Javascript
+		</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+		/>
+		<link rel="stylesheet" href="style2.css" />
+	</head>
+	<body>
+		<header class="weather-app-header">
+			<nav class="navbar navbar-expand-lg">
+				<div class="container">
+					<a class="navbar-brand"
+						><h1>
+							<div class="shadows">
+								<span>W</span>
+								<span>E</span>
+								<span>A</span>
+								<span>T</span>
+								<span>H</span>
+								<span>E</span>
+								<span>R</span>
+							</div>
+						</h1></a
+					>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">v1.0</a>
+							</li>
+							<li class="nav-item" ><a class="nav-link" href="/index.html">v2.0</a></li>
+							<li class="nav-item">
+								<i
+									class="nav-link bi bi-search"
+									id="searchButton"
+									
+								></i>
+							</li>
+							
+							
+						
+						</ul>
+				</div>
+			</nav>
+		</header>
+		<main class="weather-app-main">
+			<article class="container">
+				<div id="carouselExample" class="carousel slide mb-3">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<section class="col-xs-10 offset-xs-1">
+								<div class="weather-display py-1">
+									<h2 class="weather-info">Current Weather</h2>
+									<div
+										class="warning-message alert alert-danger weather-info"
+										id="invalidPlaceWarningDisplay"
+										role="alert"
+									>
+										<div>Unable to find this place</div>
+									</div>
+									<p
+										class="text-center currentDate display-current-date weather-info"
+										id="currentDateDisplay"
+									></p>
+									<img
+										src="/assets/weather-app.png"
+										id="weatherImageDisplay"
+										class="weather-info"
+										alt=""
+									/>
+									<h2
+										class="text-center display-loc weather-info"
+										id="locationDisplay"
+									></h2>
+									<div class="sunrise-set weather-info">
+										<div>
+											<img src="./assets/sunrise.png" alt="" />
+											<p class="sunrise-display" id="sunriseDisplay">5.30</p>
+										</div>
+										<h2
+										class="text-center display-temp weather-info"
+										id="mainTempDisplay"
+									></h2>
+										<div>
+											<img src="./assets/sunset.png" alt="" />
+											<p class="sunset-display" id="sunsetDisplay">6.30</p>
+										</div>
+									</div>
+									<p
+										class="text-center currentDate display-current-date weather-info"
+									></p>
+									
+									<p class="text-center">Feels like:</p>
+									<p
+										class="text-center display-temp-feels-like weather-info"
+										id="feelsLikeTempDisplay"
+									></p>
+									<p
+										class="text-center display-weather-desc weather-info"
+										id="weatherDescDisplay"
+									></p>
+
+									<section class="col-xs-12">
+										<div
+											id="minor-weather-details"
+											class="weather-display"
+										>
+											<div class="row">
+												<div class="card">
+													<img
+														src="./assets/temperature-low-solid.svg"
+														class="card-img-top"
+														alt="Minimum Temperature"
+													/>
+													<div class="card-body">
+														<h5 class="card-title" id="minTempDisplay"></h5>
+														<p class="card-text">Min Temp</p>
+													</div>
+												</div>
+												<div class="card">
+													<img
+														src="./assets/temperature-high-solid.svg"
+														class="card-img-top"
+														alt="Maximum Temperature"
+													/>
+													<div class="card-body">
+														<h5 class="card-title" id="maxTempDisplay"></h5>
+														<p class="card-text">Max Temp</p>
+													</div>
+												</div>
+												<div class="card">
+													<img
+														src="./assets/gauge-solid.svg"
+														class="card-img-top"
+														alt="Pressure"
+													/>
+													<div class="card-body">
+														<h5 class="card-title" id="pressureDisplay"></h5>
+														<p class="card-text">Pressure</p>
+													</div>
+												</div>
+
+												<div class="card">
+													<img
+														src="./assets/droplet-solid.svg"
+														class="card-img-top"
+														alt="Humidity"
+													/>
+													<div class="card-body">
+														<h5 class="card-title" id="humidityDisplay"></h5>
+														<p class="card-text">Humidity</p>
+													</div>
+												</div>
+												<div class="card">
+													<img
+														src="./assets/wind-solid.svg"
+														class="card-img-top"
+														alt="Wind Speed"
+													/>
+													<div class="card-body">
+														<h5 class="card-title" id="windspeedDisplay"></h5>
+														<p class="card-text">Wind Speed</p>
+													</div>
+												</div>
+												<div class="card">
+													<img
+														src="./assets/wind-svgrepo-com.svg"
+														class="card-img-top"
+														alt="Wind Gust"
+													/>
+													<div class="card-body">
+														<h5 class="card-title" id="windgustDisplay">
+															10000
+														</h5>
+														<p class="card-text">Wind Gust</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</section>
+						</div>
+						<div class="carousel-item">
+							<section class="col-xs-10 offset-xs-1">
+								<div class="weather-display py-4">
+									<h2 class="weather-info mb-3">Weather Forecast for 4 days</h2>
+
+									<div class="row card-list d-flex justify-content-center">
+										<div class="card" id="card-day1">
+											<!-- <img src="./assets/wind-svgrepo-com.svg" class="card-img-top" alt="Wind Gust" /> -->
+											<div class="card-body">
+												<h5 class="card-title" id="day1TempDisplay">25</h5>
+												<p class="card-text" id="day1DateDisplay">Day 1</p>
+												<p class="card-text" id="day1WeatherDisplay">Day 1</p>
+											</div>
+										</div>
+										<div class="card" id="card-day2">
+											<!-- <img src="./assets/wind-svgrepo-com.svg" class="card-img-top" alt="Wind Gust" /> -->
+											<div class="card-body">
+												<h5 class="card-title" id="day2TempDisplay">25</h5>
+												<p class="card-text" id="day2DateDisplay">Day 2</p>
+												<p class="card-text" id="day2WeatherDisplay">Day 2</p>
+											</div>
+										</div>
+										<div class="card" id="card-day3">
+											<!-- <img src="./assets/wind-svgrepo-com.svg" class="card-img-top" alt="Wind Gust" /> -->
+											<div class="card-body">
+												<h5 class="card-title" id="day3TempDisplay">25</h5>
+												<p class="card-text" id="day3DateDisplay">Day 3</p>
+												<p class="card-text" id="day3WeatherDisplay">Day 3</p>
+											</div>
+										</div>
+										<div class="card" id="card-day4">
+											<!-- <img src="./assets/wind-svgrepo-com.svg" class="card-img-top" alt="Wind Gust" /> -->
+											<div class="card-body">
+												<h5 class="card-title" id="day4TempDisplay">25</h5>
+												<p class="card-text" id="day4DateDisplay">Day 4</p>
+												<p class="card-text" id="day4WeatherDisplay">Day 4</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+					<button
+						class="carousel-control-prev"
+						type="button"
+						data-bs-target="#carouselExample"
+						data-bs-slide="prev"
+					>
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button
+						class="carousel-control-next"
+						type="button"
+						data-bs-target="#carouselExample"
+						data-bs-slide="next"
+					>
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</article>
+		</main>
+		<div
+			class="modal fade"
+			id="locationSearchModal"
+			tabindex="-1"
+			aria-labelledby="locationSearchModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body d-flex flex-column justify-content-between align-items-center">
+						<div class="d-flex justify-content-between">
+							<form
+								class="location-search-form d-flex"
+								id="locationSearchForm"
+								role="search"
+							>
+								<input
+									class="form-control me-2 locationInput"
+									id="locationInput"
+									type="search"
+									placeholder="Enter Location"
+									aria-label="Location Input"
+								/>
+								<button class="btn btn-primary" type="submit">
+									Get Weather
+								</button>
+							</form>
+
+							
+						</div>
+
+						<div class="mt-3">
+							<div
+								class="warning-message alert alert-danger weather-info"
+								id="errorInputDisplay"
+								role="alert"
+							>
+								<div>Invalid Input</div>
+							</div>
+						</div>
+						<div class="div mt-3">
+							<button
+								type="button"
+								class="btn-close btn-lg"
+								onclick="closeModal()"
+								aria-label="Close"
+							></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
+		<script src="script.js" type="module"></script>
+	</body>
+</html>

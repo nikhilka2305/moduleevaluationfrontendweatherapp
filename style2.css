@@ -1,0 +1,163 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+	background: linear-gradient(115deg, #62cff4, #2c67f2);
+	color: #fff;
+	width: 100vw;
+	height: 100%;
+	min-height: 100vh;
+}
+
+.nav-item .nav-link {
+	font-size: 1.2em;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-item {
+	margin-left: 1.5em;
+}
+
+.container {
+	padding: 0;
+}
+
+.weather-display {
+	width: 100%;
+
+	min-height: 300px;
+	/* max-height: 500px; */
+	background: transparent;
+	border-radius: 20px;
+	margin-top: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.sunrise-set {
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	gap: 2em;
+	font-size: 1.5em;
+	flex-wrap: wrap;
+	margin-top: 0.5em;
+}
+
+.sunrise-set img {
+	width: 1.5em;
+}
+
+.sunrise-set div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0.5em;
+}
+
+.display-temp {
+	font-size: 6em;
+	font-weight: 300;
+}
+
+.display-loc {
+	font-size: 3em;
+	font-weight: 500;
+}
+
+.display-weather-desc {
+	font-size: 1.5em;
+}
+
+.display-temp-feels-like {
+	font-size: 2em;
+}
+
+.currentDate {
+	font-size: 1.2em;
+	margin-bottom: 0;
+}
+
+#mainTempDisplay {
+	font-size: 3.5em;
+}
+
+#minor-weather-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0 1em;
+	gap: 4em;
+	background: transparent;
+	margin-top: 0;
+}
+#minor-weather-details > .row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 1em;
+	gap: 1em;
+}
+
+.card {
+	height: 10em;
+	width: 10em;
+	text-align: center;
+	border-radius: 15px;
+	background: transparent;
+	font-size: 0.9em;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.card img {
+	width: 2em;
+	height: 2em;
+	margin: 1em auto 0.2em;
+}
+
+.warning-message {
+	display: none;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	filter: invert(100%);
+}
+
+.card-list {
+	margin-top: 2em;
+	width: 60%;
+	flex-direction: row;
+	justify-content: center;
+	gap: 1em;
+}
+
+.card-list .card {
+	width: 20%;
+	min-width: 10em;
+	height: auto;
+	font-size: 0.8em;
+}
+
+/* Modal */
+
+.modal-content {
+	background: transparent;
+	border: none;
+}
+
+.btn-close {
+	filter: invert();
+	opacity: 1;
+}
+
+@media (max-width: 500px) {
+	#mainTempDisplay {
+		font-size: 4em;
+	}
+}
