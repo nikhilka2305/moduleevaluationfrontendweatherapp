@@ -34,6 +34,7 @@ const formElement = document.querySelector("#locationSearchForm");
 const searchModal = document.querySelector("#locationSearchModal");
 const formError = document.querySelector("#errorInputDisplay");
 const searchButton = document.querySelector("#searchButton");
+const closeModalBtn = document.querySelector("#closeModalBtn");
 // Display Elements for Current Weather
 const locationDisplay = document.querySelector("#locationDisplay");
 const mainTempDisplay = document.querySelector("#mainTempDisplay");
@@ -83,6 +84,8 @@ searchButton.addEventListener("click", function () {
 	backdrop.className = "modal-backdrop show";
 	document.body.appendChild(backdrop);
 });
+
+closeModalBtn.addEventListener("click", closeModal);
 
 function validateInput() {
 	if (locationInput.value.length > 0) {
